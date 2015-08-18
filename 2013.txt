@@ -1,0 +1,59 @@
+From news at jonasstein.de  Sat Jul  6 18:23:40 2013
+From: news at jonasstein.de (Jonas Stein)
+Date: Sat, 06 Jul 2013 18:23:40 +0200
+Subject: [Clip-devel] can not compile current code tree
+In-Reply-To: <CAEcO3=k=Ya20ZnfQp1M+x=qU9RH+GBCEHHUi9KM2dLfzkQGwzQ@mail.gmail.com>
+References: <4E91C084.2060401@jonasstein.de>
+	<CAEcO3=kf3f+NCiY=upPoZ_FGqUriZVsfDK7KrvRCxi7916KL8g@mail.gmail.com>
+	<CAEcO3=kU6XdRX5ACiQdhM+kmjzQhL6oSoGDFLkBwE6enNcY7uQ@mail.gmail.com>
+	<4E9496BD.3020907@jonasstein.de>
+	<CAEcO3=mFSsaQTjyRY=LCHsHGid9pzsiCJGC_XU-yo_jzadZE0A@mail.gmail.com>
+	<CAEcO3=ksy7f6ZJ=SH4E7faD-p099Fk5O+xyMsyWiYqxcAang6Q@mail.gmail.com>
+	<4E95EC97.8070200@jonasstein.de>
+	<CAEcO3=k=Ya20ZnfQp1M+x=qU9RH+GBCEHHUi9KM2dLfzkQGwzQ@mail.gmail.com>
+Message-ID: <51D8448C.5090109@jonasstein.de>
+
+On 10/13/11 00:30, Olaf Schumann wrote:
+> Hi, I think I removed the the dependencys on boost::thread. You may try to
+> find the include lines
+> 
+> #include (boost/thread.hpp)
+> 
+> Delete them and try again. I'am now on my way to holydays, so if that does
+> not work, try to install the boost libs. If that still does not work, I will
+> available the next friday. Hope you succed!
+
+Hi,
+I finally managed to compile the latest source on a recent gentoo system.
+
+I had to install the packages
+dev-cpp/eigen
+dev-libs/boost
+dev-qt/qt-creator
+
+#include <Eigen/*> was not found after installing the dev-cpp/eigen
+package. I had to rewrite this include line with the complete path as
+
+-- #include <Eigen/Dense>
+++ #include "/usr/include/eigen3/Eigen/Dense"
+
+I will check, if my system needed some help to find the installed libs
+correctly.
+
+Additionally I saw several warnings about declarations during the build
+one of these:
+
+/tmp/clip4/build-Clip4-Desktop-Debug/qrc_resources.cpp:12873: warning:
+no previous declaration for 'int qCleanupResources_resources()'
+[-Wmissing-declarations]
+
+
+Clip4 finally works and starts very fast. While I saw many crashes in
+the windows version if one plays around with the histogram it works very
+stable on gentoo linux.
+
+Kind regards,
+
+-- 
+Jonas Stein
+

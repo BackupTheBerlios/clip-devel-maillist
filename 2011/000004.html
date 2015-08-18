@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Clip-devel] can not compile current code tree
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/clip-devel/2011/index.html" >
+   <LINK REL="made" HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3C4E91C084.2060401%40jonasstein.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000003.html">
+   <LINK REL="Next"  HREF="000005.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Clip-devel] can not compile current code tree</H1>
+    <B>Jonas Stein</B> 
+    <A HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3C4E91C084.2060401%40jonasstein.de%3E"
+       TITLE="[Clip-devel] can not compile current code tree">news at jonasstein.de
+       </A><BR>
+    <I>Sun Oct  9 17:40:52 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000003.html">[Clip-devel] Test devel...
+</A></li>
+        <LI>Next message: <A HREF="000005.html">[Clip-devel] can not compile current code tree
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+i have just fetched the source with
+hg clone <A HREF="http://hg.berlios.de/repos/clip">http://hg.berlios.de/repos/clip</A>
+
+but my compiler claims:
+
+Running build steps for project Clip4...
+Configuration unchanged, skipping QMake step.
+Starting: /usr/bin/make -w
+make: Entering directory `/home/stein/my/prj/clip/clip'
+rm -f .//defs.o
+g++ -c -pipe -std=gnu++0x -g -pg -W -Wpointer-arith -Wcast-qual 
+-Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -W 
+-D_REENTRANT -D__DEBUG__ 
+-D__SOURCEDIR__=&quot;\&quot;/home/stein/my/prj/clip/clip\&quot;&quot; 
+-D__HG_REPRO_ID__=\&quot;4f164cb3bcb0\&quot; -D__HG_REPRO_REV__=\&quot;212\&quot; 
+-D__HG_REPRO_DATE__=&quot;\&quot;Fri Oct 07 14:10:34 2011 +0200\&quot;&quot; -DQT_WEBKIT_LIB 
+-DQT_SVG_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB 
+-DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. 
+-I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui 
+-I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtXml 
+-I/usr/include/qt4/QtSvg -I/usr/include/qt4/QtWebKit -I/usr/include/qt4 
+-I../eigen -I/usr/X11R6/include -I. -I. -o main.o main.cpp
+In file included from ./ui/clip.h:30,
+from main.cpp:24:
+./tools/mousepositioninfo.h: In constructor 
+&#8216;MousePositionInfo::MousePositionInfo()&#8217;:
+./tools/mousepositioninfo.h:39: error: &#8216;nullptr&#8217; was not declared in 
+this scope
+In file included from main.cpp:24:
+./ui/clip.h: At global scope:
+./ui/clip.h:52: error: &#8216;nullptr&#8217; was not declared in this scope
+make: Leaving directory `/home/stein/my/prj/clip/clip'
+make: *** [main.o] Error 1
+Exited with code 2.
+Error while building project Clip4
+When executing build step 'Make'
+
+is there a lib missing on my system, or is the sourcetree broken?
+
+kind regards,
+
+-- 
+Jonas Stein &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">news at jonasstein.de</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000003.html">[Clip-devel] Test devel...
+</A></li>
+	<LI>Next message: <A HREF="000005.html">[Clip-devel] can not compile current code tree
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#4">[ date ]</a>
+              <a href="thread.html#4">[ thread ]</a>
+              <a href="subject.html#4">[ subject ]</a>
+              <a href="author.html#4">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/clip-devel">More information about the Clip-devel
+mailing list</a><br>
+</body></html>

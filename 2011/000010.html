@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Clip-devel] can not compile current code tree
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/clip-devel/2011/index.html" >
+   <LINK REL="made" HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3CCAEcO3%3Dk%3DYa20ZnfQp1M%2Bx%3DqU9RH%2BGBCEHHUi9KM2dLfzkQGwzQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   <LINK REL="Next"  HREF="000009.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Clip-devel] can not compile current code tree</H1>
+    <B>Olaf Schumann</B> 
+    <A HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3CCAEcO3%3Dk%3DYa20ZnfQp1M%2Bx%3DqU9RH%2BGBCEHHUi9KM2dLfzkQGwzQ%40mail.gmail.com%3E"
+       TITLE="[Clip-devel] can not compile current code tree">o.j.schumann at googlemail.com
+       </A><BR>
+    <I>Thu Oct 13 00:30:18 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[Clip-devel] can not compile current code tree
+</A></li>
+        <LI>Next message: <A HREF="000009.html">[Clip-devel] can not compile current code tree
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, I think I removed the the dependencys on boost::thread. You may try to
+find the include lines
+
+#include (boost/thread.hpp)
+
+Delete them and try again. I'am now on my way to holydays, so if that does
+not work, try to install the boost libs. If that still does not work, I will
+available the next friday. Hope you succed!
+
+Sincerely, Olaf
+Am 12.10.2011 21:38 schrieb &quot;Jonas Stein&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">news at jonasstein.de</A>&gt;:
+
+&gt;<i> So, finally I found a debian computer with gcc 4.4.1
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> when it compiles here, i'd like to start to create a .deb package.
+</I>&gt;<i>
+</I>&gt;<i>  One thing was missing, with which I had a though fight, namely the
+</I>&gt;&gt;<i> template stuff in the thread handling. But now it compiles and runs on
+</I>&gt;&gt;<i> this box. You can get the latest changeset from berlios.de or
+</I>&gt;&gt;<i> sourceforge.net
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Thank you.
+</I>&gt;<i> I fetched it. One last error remained. A missing file? Perhaps just not yet
+</I>&gt;<i> in the repository?
+</I>&gt;<i>
+</I>&gt;<i> kind regards
+</I>&gt;<i> Jonas
+</I>&gt;<i>
+</I>&gt;<i> =========================== compiler output =======
+</I>&gt;<i>
+</I>&gt;<i> Running build steps for project Clip4...
+</I>&gt;<i> Starting: /usr/bin/qmake-qt4 /home/stein/my/prj/clip/Clip4.**pro -spec
+</I>&gt;<i> linux-g++ -r CONFIG+=debug
+</I>&gt;<i> Exited with code 0.
+</I>&gt;<i> Starting: /usr/bin/make -w
+</I>&gt;<i> make: Entering directory `/home/stein/my/prj/clip'
+</I>&gt;<i> rm -f .//defs.o
+</I>&gt;<i> /usr/bin/uic-qt4 ui/clip.ui -o ui_clip.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/clipconfig.ui -o ui_clipconfig.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/contrastcurves.ui -o ui_contrastcurves.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/crystaldisplay.ui -o ui_crystaldisplay.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/fitdisplay.ui -o ui_fitdisplay.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/hkltool.ui -o ui_hkltool.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/imagetoolbox.ui -o ui_imagetoolbox.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/indexdisplay.ui -o ui_indexdisplay.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/laueplanecfg.ui -o ui_laueplanecfg.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/mouseinfodisplay.ui -o ui_mouseinfodisplay.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/printdialog.ui -o ui_printdialog.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/projectionplane.ui -o ui_projectionplane.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/reorient.ui -o ui_reorient.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/resolutioncalculator.ui -o ui_resolutioncalculator.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/rotatecrystal.ui -o ui_rotatecrystal.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/sadeasteregg.ui -o ui_sadeasteregg.h
+</I>&gt;<i> /usr/bin/uic-qt4 ui/stereocfg.ui -o ui_stereocfg.h
+</I>&gt;<i> g++ -c -pipe -std=gnu++0x -g -pg -W -Wpointer-arith -Wcast-qual
+</I>&gt;<i> -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -W -D_REENTRANT
+</I>&gt;<i> -D__DEBUG__ -D__SOURCEDIR__=&quot;\&quot;/home/**stein/my/prj/clip\&quot;&quot;
+</I>&gt;<i> -D__HG_REPRO_ID__=\&quot;**656551a5a475\&quot; -D__HG_REPRO_REV__=\&quot;220\&quot;
+</I>&gt;<i> -D__HG_REPRO_DATE__=&quot;\&quot;Wed Oct 12 13:54:58 2011 +0200\&quot;&quot; -DQT_WEBKIT_LIB
+</I>&gt;<i> -DQT_SVG_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+</I>&gt;<i> -DQT_SHARED -I/usr/share/qt4/mkspecs/**linux-g++ -I.
+</I>&gt;<i> -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui
+</I>&gt;<i> -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtXml
+</I>&gt;<i> -I/usr/include/qt4/QtSvg -I/usr/include/qt4/QtWebKit -I/usr/include/qt4
+</I>&gt;<i> -I../eigen -I/usr/X11R6/include -I. -I. -o main.o main.cpp
+</I>&gt;<i> g++ -c -pipe -std=gnu++0x -g -pg -W -Wpointer-arith -Wcast-qual
+</I>&gt;<i> -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -W -D_REENTRANT
+</I>&gt;<i> -D__DEBUG__ -D__SOURCEDIR__=&quot;\&quot;/home/**stein/my/prj/clip\&quot;&quot;
+</I>&gt;<i> -D__HG_REPRO_ID__=\&quot;**656551a5a475\&quot; -D__HG_REPRO_REV__=\&quot;220\&quot;
+</I>&gt;<i> -D__HG_REPRO_DATE__=&quot;\&quot;Wed Oct 12 13:54:58 2011 +0200\&quot;&quot; -DQT_WEBKIT_LIB
+</I>&gt;<i> -DQT_SVG_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+</I>&gt;<i> -DQT_SHARED -I/usr/share/qt4/mkspecs/**linux-g++ -I.
+</I>&gt;<i> -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui
+</I>&gt;<i> -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtXml
+</I>&gt;<i> -I/usr/include/qt4/QtSvg -I/usr/include/qt4/QtWebKit -I/usr/include/qt4
+</I>&gt;<i> -I../eigen -I/usr/X11R6/include -I. -I. -o clip.o ui/clip.cpp
+</I>&gt;<i> g++ -c -pipe -std=gnu++0x -g -pg -W -Wpointer-arith -Wcast-qual
+</I>&gt;<i> -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -W -D_REENTRANT
+</I>&gt;<i> -D__DEBUG__ -D__SOURCEDIR__=&quot;\&quot;/home/**stein/my/prj/clip\&quot;&quot;
+</I>&gt;<i> -D__HG_REPRO_ID__=\&quot;**656551a5a475\&quot; -D__HG_REPRO_REV__=\&quot;220\&quot;
+</I>&gt;<i> -D__HG_REPRO_DATE__=&quot;\&quot;Wed Oct 12 13:54:58 2011 +0200\&quot;&quot; -DQT_WEBKIT_LIB
+</I>&gt;<i> -DQT_SVG_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+</I>&gt;<i> -DQT_SHARED -I/usr/share/qt4/mkspecs/**linux-g++ -I.
+</I>&gt;<i> -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui
+</I>&gt;<i> -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtXml
+</I>&gt;<i> -I/usr/include/qt4/QtSvg -I/usr/include/qt4/QtWebKit -I/usr/include/qt4
+</I>&gt;<i> -I../eigen -I/usr/X11R6/include -I. -I. -o colorbutton.o
+</I>&gt;<i> config/colorbutton.cpp
+</I>&gt;<i> g++ -c -pipe -std=gnu++0x -g -pg -W -Wpointer-arith -Wcast-qual
+</I>&gt;<i> -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -W -D_REENTRANT
+</I>&gt;<i> -D__DEBUG__ -D__SOURCEDIR__=&quot;\&quot;/home/**stein/my/prj/clip\&quot;&quot;
+</I>&gt;<i> -D__HG_REPRO_ID__=\&quot;**656551a5a475\&quot; -D__HG_REPRO_REV__=\&quot;220\&quot;
+</I>&gt;<i> -D__HG_REPRO_DATE__=&quot;\&quot;Wed Oct 12 13:54:58 2011 +0200\&quot;&quot; -DQT_WEBKIT_LIB
+</I>&gt;<i> -DQT_SVG_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+</I>&gt;<i> -DQT_SHARED -I/usr/share/qt4/mkspecs/**linux-g++ -I.
+</I>&gt;<i> -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui
+</I>&gt;<i> -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtXml
+</I>&gt;<i> -I/usr/include/qt4/QtSvg -I/usr/include/qt4/QtWebKit -I/usr/include/qt4
+</I>&gt;<i> -I../eigen -I/usr/X11R6/include -I. -I. -o colorconfigitem.o
+</I>&gt;<i> config/colorconfigitem.cpp
+</I>&gt;<i> g++ -c -pipe -std=gnu++0x -g -pg -W -Wpointer-arith -Wcast-qual
+</I>&gt;<i> -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -W -D_REENTRANT
+</I>&gt;<i> -D__DEBUG__ -D__SOURCEDIR__=&quot;\&quot;/home/**stein/my/prj/clip\&quot;&quot;
+</I>&gt;<i> -D__HG_REPRO_ID__=\&quot;**656551a5a475\&quot; -D__HG_REPRO_REV__=\&quot;220\&quot;
+</I>&gt;<i> -D__HG_REPRO_DATE__=&quot;\&quot;Wed Oct 12 13:54:58 2011 +0200\&quot;&quot; -DQT_WEBKIT_LIB
+</I>&gt;<i> -DQT_SVG_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+</I>&gt;<i> -DQT_SHARED -I/usr/share/qt4/mkspecs/**linux-g++ -I.
+</I>&gt;<i> -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui
+</I>&gt;<i> -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtXml
+</I>&gt;<i> -I/usr/include/qt4/QtSvg -I/usr/include/qt4/QtWebKit -I/usr/include/qt4
+</I>&gt;<i> -I../eigen -I/usr/X11R6/include -I. -I. -o configstore.o
+</I>&gt;<i> config/configstore.cpp
+</I>&gt;<i> config/configstore.cpp: In function &#8216;QByteArray sig2Name(const char*)&#8217;:
+</I>&gt;<i> config/configstore.cpp:110: warning: no previous declaration for
+</I>&gt;<i> &#8216;QByteArray sig2Name(const char*)&#8217;
+</I>&gt;<i> g++ -c -pipe -std=gnu++0x -g -pg -W -Wpointer-arith -Wcast-qual
+</I>&gt;<i> -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -W -D_REENTRANT
+</I>&gt;<i> -D__DEBUG__ -D__SOURCEDIR__=&quot;\&quot;/home/**stein/my/prj/clip\&quot;&quot;
+</I>&gt;<i> -D__HG_REPRO_ID__=\&quot;**656551a5a475\&quot; -D__HG_REPRO_REV__=\&quot;220\&quot;
+</I>&gt;<i> -D__HG_REPRO_DATE__=&quot;\&quot;Wed Oct 12 13:54:58 2011 +0200\&quot;&quot; -DQT_WEBKIT_LIB
+</I>&gt;<i> -DQT_SVG_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+</I>&gt;<i> -DQT_SHARED -I/usr/share/qt4/mkspecs/**linux-g++ -I.
+</I>&gt;<i> -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui
+</I>&gt;<i> -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtXml
+</I>&gt;<i> -I/usr/include/qt4/QtSvg -I/usr/include/qt4/QtWebKit -I/usr/include/qt4
+</I>&gt;<i> -I../eigen -I/usr/X11R6/include -I. -I. -o crystal.o core/crystal.cpp
+</I>&gt;<i> core/crystal.cpp:32:28: error: boost/thread.hpp: No such file or directory
+</I>&gt;<i> make: Leaving directory `/home/stein/my/prj/clip'
+</I>&gt;<i> make: *** [crystal.o] Error 1
+</I>&gt;<i> Exited with code 2.
+</I>&gt;<i> Error while building project Clip4
+</I>&gt;<i> When executing build step 'Make'
+</I>&gt;<i> --
+</I>&gt;<i> Jonas Stein &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">news at jonasstein.de</A>&gt;
+</I>&gt;<i> ______________________________**_________________
+</I>&gt;<i> Clip-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">Clip-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/**mailman/listinfo/clip-devel&lt;https://lists.berlios.de/mailman/listinfo/clip-devel">https://lists.berlios.de/**mailman/listinfo/clip-devel&lt;https://lists.berlios.de/mailman/listinfo/clip-devel</A>&gt;
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/clip-devel/attachments/20111013/1eacbdf4/attachment.html">https://lists.berlios.de/pipermail/clip-devel/attachments/20111013/1eacbdf4/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[Clip-devel] can not compile current code tree
+</A></li>
+	<LI>Next message: <A HREF="000009.html">[Clip-devel] can not compile current code tree
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#10">[ date ]</a>
+              <a href="thread.html#10">[ thread ]</a>
+              <a href="subject.html#10">[ subject ]</a>
+              <a href="author.html#10">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/clip-devel">More information about the Clip-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Clip-devel] can not compile current code tree
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/clip-devel/2011/index.html" >
+   <LINK REL="made" HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3C4E960425.1080707%40jonasstein.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000010.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Clip-devel] can not compile current code tree</H1>
+    <B>Jonas Stein</B> 
+    <A HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3C4E960425.1080707%40jonasstein.de%3E"
+       TITLE="[Clip-devel] can not compile current code tree">news at jonasstein.de
+       </A><BR>
+    <I>Wed Oct 12 23:18:29 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000010.html">[Clip-devel] can not compile current code tree
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Tucker,
+
+thank you for your mail.
+
+&gt;<i> Are you missing the Boost libraries (debian package libboost)?
+</I>
+some libbosst packages are installed, but not all.
+
+&gt;<i> I'm using gcc 4.5.2 with boost 1.42.0 and I had to patch the boost
+</I>&gt;<i> libraries, as detailed here&lt;<A HREF="https://svn.boost.org/trac/boost/ticket/3844">https://svn.boost.org/trac/boost/ticket/3844</A>&gt;,
+</I>&gt;<i> to get Clip to compile. The newest version of boost (1.48) may or may not
+</I>&gt;<i> need the patches applied.
+</I>
+i could not find out which is the correct libboost package for me.
+I think i will wait till 1.48 is out for my distribution.
+
+
+# aptitude search libboost
+p   libboost-all-dev 
+- Boost C++ Libraries development files (ALL, default version) 
+
+p   libboost-date-time-dev 
+- date-time libraries based on generic programming (default version) 
+
+p   libboost-date-time1.42-dev 
+- set of date-time libraries based on generic programming concepts 
+
+c   libboost-date-time1.42.0 
+- set of date-time libraries based on generic programming concepts 
+
+p   libboost-dbg 
+- Boost C++ Libraries with debug symbols 
+
+p   libboost-dev 
+- Boost C++ Libraries development files (default version) 
+
+p   libboost-doc 
+- Boost C++ Libraries documentation (default version) 
+
+p   libboost-filesystem-dev 
+- filesystem operations in C++ (default version) 
+
+p   libboost-filesystem1.42-dev 
+- filesystem operations (portable paths, iteration over directories, 
+etc) in C+
+i A libboost-filesystem1.42.0 
+- filesystem operations (portable paths, iteration over directories, 
+etc) in C+
+p   libboost-graph-dev 
+- generic graph components and algorithms in C++ (default version) 
+
+p   libboost-graph-parallel-dev 
+- generic graph components and algorithms in C++ (default version) 
+
+p   libboost-graph-parallel1.42-dev 
+- generic graph components and algorithms in C++ 
+
+p   libboost-graph-parallel1.42.0 
+- generic graph components and algorithms in C++ 
+
+p   libboost-graph1.42-dev 
+- generic graph components and algorithms in C++ 
+
+p   libboost-graph1.42.0 
+- generic graph components and algorithms in C++ 
+
+p   libboost-iostreams-dev 
+- Boost.Iostreams Library development files (default version) 
+
+p   libboost-iostreams1.42-dev 
+- Boost.Iostreams Library development files 
+
+i   libboost-iostreams1.42.0 
+- Boost.Iostreams Library 
+
+p   libboost-math-dev 
+- Boost.Math Library development files (default version) 
+
+p   libboost-math1.42-dev 
+- Boost.Math Library development files 
+
+p   libboost-math1.42.0 
+- Boost.Math Library 
+
+p   libboost-mpi-dev 
+- C++ interface to the Message Passing Interface (MPI) (default version) 
+
+p   libboost-mpi-python-dev 
+- Python interface to the Message Passing Interface (MPI) (default 
+version)
+p   libboost-mpi-python1.42-dev 
+- C++ interface to the Message Passing Interface (MPI), Python Bindings 
+
+p   libboost-mpi-python1.42.0 
+- C++ interface to the Message Passing Interface (MPI), Python Bindings 
+
+p   libboost-mpi1.42-dev 
+- C++ interface to the Message Passing Interface (MPI) 
+
+p   libboost-mpi1.42.0 
+- C++ interface to the Message Passing Interface (MPI) 
+
+p   libboost-program-options-dev 
+- program options library for C++ (default version) 
+
+p   libboost-program-options1.42-dev 
+- program options library for C++ 
+
+c   libboost-program-options1.42.0 
+- program options library for C++ 
+
+p   libboost-python-dev 
+- Boost.Python Library development files (default version) 
+
+p   libboost-python1.42-dev 
+- Boost.Python Library development files 
+
+i A libboost-python1.42.0 
+- Boost.Python Library 
+
+p   libboost-regex-dev 
+- regular expression library for C++ (default version) 
+
+p   libboost-regex1.42-dev 
+- regular expression library for C++ 
+
+p   libboost-regex1.42.0 
+- regular expression library for C++ 
+
+p   libboost-serialization-dev 
+- serialization library for C++ (default version) 
+
+p   libboost-serialization1.42-dev 
+- serialization library for C++ 
+
+p   libboost-serialization1.42.0 
+- serialization library for C++ 
+
+p   libboost-signals-dev 
+- managed signals and slots library for C++ (default version) 
+
+p   libboost-signals1.42-dev 
+- managed signals and slots library for C++ 
+
+p   libboost-signals1.42.0 
+- managed signals and slots library for C++ 
+
+p   libboost-system-dev 
+- Operating system (e.g. diagnostics support) library (default version) 
+
+p   libboost-system1.42-dev 
+- Operating system (e.g. diagnostics support) library 
+
+i A libboost-system1.42.0 
+- Operating system (e.g. diagnostics support) library 
+
+p   libboost-test-dev 
+- components for writing and executing test suites (default version) 
+
+p   libboost-test1.42-dev 
+- components for writing and executing test suites 
+
+p   libboost-test1.42.0 
+- components for writing and executing test suites 
+
+p   libboost-thread-dev 
+- portable C++ multi-threading (default version) 
+
+p   libboost-thread1.42-dev 
+- portable C++ multi-threading 
+
+i A libboost-thread1.42.0 
+- portable C++ multi-threading 
+
+p   libboost-wave-dev 
+- C99/C++ preprocessor library (default version) 
+
+p   libboost-wave1.42-dev 
+- C99/C++ preprocessor library 
+
+p   libboost-wave1.42.0 
+- C99/C++ preprocessor library 
+
+p   libboost1.42-all-dev 
+- Boost C++ Libraries development files (ALL) 
+
+p   libboost1.42-dbg 
+- Boost C++ Libraries with debug symbols 
+
+p   libboost1.42-dev 
+- Boost C++ Libraries development files 
+
+p   libboost1.42-doc 
+- Boost.org libraries documentation
+
+
+-- 
+Jonas Stein &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">news at jonasstein.de</A>&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000010.html">[Clip-devel] can not compile current code tree
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/clip-devel">More information about the Clip-devel
+mailing list</a><br>
+</body></html>

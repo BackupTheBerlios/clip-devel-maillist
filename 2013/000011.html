@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Clip-devel] can not compile current code tree
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/clip-devel/2013/index.html" >
+   <LINK REL="made" HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3C51D8448C.5090109%40jonasstein.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Clip-devel] can not compile current code tree</H1>
+    <B>Jonas Stein</B> 
+    <A HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3C51D8448C.5090109%40jonasstein.de%3E"
+       TITLE="[Clip-devel] can not compile current code tree">news at jonasstein.de
+       </A><BR>
+    <I>Sat Jul  6 18:23:40 CEST 2013</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11">[ date ]</a>
+              <a href="thread.html#11">[ thread ]</a>
+              <a href="subject.html#11">[ subject ]</a>
+              <a href="author.html#11">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 10/13/11 00:30, Olaf Schumann wrote:
+&gt;<i> Hi, I think I removed the the dependencys on boost::thread. You may try to
+</I>&gt;<i> find the include lines
+</I>&gt;<i> 
+</I>&gt;<i> #include (boost/thread.hpp)
+</I>&gt;<i> 
+</I>&gt;<i> Delete them and try again. I'am now on my way to holydays, so if that does
+</I>&gt;<i> not work, try to install the boost libs. If that still does not work, I will
+</I>&gt;<i> available the next friday. Hope you succed!
+</I>
+Hi,
+I finally managed to compile the latest source on a recent gentoo system.
+
+I had to install the packages
+dev-cpp/eigen
+dev-libs/boost
+dev-qt/qt-creator
+
+#include &lt;Eigen/*&gt; was not found after installing the dev-cpp/eigen
+package. I had to rewrite this include line with the complete path as
+
+-- #include &lt;Eigen/Dense&gt;
+++ #include &quot;/usr/include/eigen3/Eigen/Dense&quot;
+
+I will check, if my system needed some help to find the installed libs
+correctly.
+
+Additionally I saw several warnings about declarations during the build
+one of these:
+
+/tmp/clip4/build-Clip4-Desktop-Debug/qrc_resources.cpp:12873: warning:
+no previous declaration for 'int qCleanupResources_resources()'
+[-Wmissing-declarations]
+
+
+Clip4 finally works and starts very fast. While I saw many crashes in
+the windows version if one plays around with the histogram it works very
+stable on gentoo linux.
+
+Kind regards,
+
+-- 
+Jonas Stein
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#11">[ date ]</a>
+              <a href="thread.html#11">[ thread ]</a>
+              <a href="subject.html#11">[ subject ]</a>
+              <a href="author.html#11">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/clip-devel">More information about the Clip-devel
+mailing list</a><br>
+</body></html>

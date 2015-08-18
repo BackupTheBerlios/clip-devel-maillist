@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Clip-devel] can not compile current code tree
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/clip-devel/2011/index.html" >
+   <LINK REL="made" HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3CCAEcO3%3DmFSsaQTjyRY%3DLCHsHGid9pzsiCJGC_XU-yo_jzadZE0A%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000005.html">
+   <LINK REL="Next"  HREF="000007.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Clip-devel] can not compile current code tree</H1>
+    <B>Olaf Schumann</B> 
+    <A HREF="mailto:clip-devel%40lists.berlios.de?Subject=Re%3A%20%5BClip-devel%5D%20can%20not%20compile%20current%20code%20tree&In-Reply-To=%3CCAEcO3%3DmFSsaQTjyRY%3DLCHsHGid9pzsiCJGC_XU-yo_jzadZE0A%40mail.gmail.com%3E"
+       TITLE="[Clip-devel] can not compile current code tree">o.j.schumann at googlemail.com
+       </A><BR>
+    <I>Tue Oct 11 22:52:05 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000005.html">[Clip-devel] can not compile current code tree
+</A></li>
+        <LI>Next message: <A HREF="000007.html">[Clip-devel] can not compile current code tree
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6">[ date ]</a>
+              <a href="thread.html#6">[ thread ]</a>
+              <a href="subject.html#6">[ subject ]</a>
+              <a href="author.html#6">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>OK, I removed the std::atomic stuff, and pushed it to berlios. You
+could give it a next try. If it doesn't work, I will try if I could
+find a debian computer with an older gcc.
+
+
+sincerely,
+   Olaf
+
+
+2011/10/11 Jonas Stein &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">news at jonasstein.de</A>&gt;:
+&gt;&gt;<i> I just pushed a new version to berlios.de that compiles with an older
+</I>&gt;&gt;<i> version of the g++, that doesn't recognize stuff like nullptr, here I
+</I>&gt;&gt;<i> use g++ 4.5.1. But some features from the c++11 standard are required,
+</I>&gt;&gt;<i> so a much older version of g++ might still not work. Please try the
+</I>&gt;&gt;<i> new one. If it does not work, maybe you could tell me the version of
+</I>&gt;&gt;<i> your compiler.
+</I>&gt;<i>
+</I>&gt;<i> with the version of Tue Oct 11 21:11:50 CEST 2011
+</I>&gt;<i> i got this result:
+</I>&gt;<i>
+</I>&gt;<i> $ make
+</I>&gt;<i> rm -f .//defs.o
+</I>&gt;<i> g++ -c -pipe -std=gnu++0x -g -pg -W -Wpointer-arith -Wcast-qual -Wcast-align
+</I>&gt;<i> -Wmissing-declarations -Wredundant-decls -Wall -W -D_REENTRANT -D__DEBUG__
+</I>&gt;<i> -D__SOURCEDIR__=&quot;\&quot;/home/stein/my/prj/clip\&quot;&quot;
+</I>&gt;<i> -D__HG_REPRO_ID__=\&quot;43e0c305bcf4\&quot; -D__HG_REPRO_REV__=\&quot;216\&quot;
+</I>&gt;<i> -D__HG_REPRO_DATE__=&quot;\&quot;Tue Oct 11 16:10:32 2011 +0200\&quot;&quot; -DQT_WEBKIT_LIB
+</I>&gt;<i> -DQT_SVG_LIB -DQT_XML_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+</I>&gt;<i> -DQT_SHARED -I/usr/share/qt4/mkspecs/linux-g++ -I. -I/usr/include/qt4/QtCore
+</I>&gt;<i> -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtOpenGL
+</I>&gt;<i> -I/usr/include/qt4/QtXml -I/usr/include/qt4/QtSvg
+</I>&gt;<i> -I/usr/include/qt4/QtWebKit -I/usr/include/qt4 -I../eigen
+</I>&gt;<i> -I/usr/X11R6/include -I. -I. -o clip.o ui/clip.cpp
+</I>&gt;<i> In file included from ui/clip.cpp:44:
+</I>&gt;<i> ./core/crystal.h:32:18: error: atomic: No such file or directory
+</I>&gt;<i> In file included from ui/clip.cpp:44:
+</I>&gt;<i> ./core/crystal.h:221: error: ISO C++ forbids declaration of &#8216;atomic&#8217; with no
+</I>&gt;<i> type
+</I>&gt;<i> ./core/crystal.h:221: error: invalid use of &#8216;::&#8217;
+</I>&gt;<i> ./core/crystal.h:221: error: expected &#8216;;&#8217; before &#8216;&lt;&#8217; token
+</I>&gt;<i> make: *** [clip.o] Error 1
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> $ aptitude show &quot;g++&quot;
+</I>&gt;<i> Package: g++
+</I>&gt;<i> State: installed
+</I>&gt;<i> Automatically installed: no
+</I>&gt;<i> Version: 4:4.4.5-1
+</I>&gt;<i> Priority: optional
+</I>&gt;<i> Section: devel
+</I>&gt;<i> Maintainer: Debian GCC Maintainers &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">debian-gcc at lists.debian.org</A>&gt;
+</I>&gt;<i> Uncompressed Size: 41.0 k
+</I>&gt;<i> Depends: cpp (&gt;= 4:4.4.5-1), gcc (&gt;= 4:4.4.5-1), g++-4.4 (&gt;= 4.4.5-1~),
+</I>&gt;<i> gcc-4.4
+</I>&gt;<i> &#160; &#160; &#160; &#160; (&gt;= 4.4.5-1~)
+</I>&gt;<i> Suggests: g++-multilib
+</I>&gt;<i> Provides: c++-compiler
+</I>&gt;<i> Description: The GNU C++ compiler
+</I>&gt;<i> &#160;This is the GNU C++ compiler, a fairly portable optimizing compiler for
+</I>&gt;<i> C++.
+</I>&gt;<i>
+</I>&gt;<i> &#160;This is a dependency package providing the default GNU C++ compiler.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i> BTW: I suppose you are German, so we could switch to Deutsch?! ;-)
+</I>&gt;<i>
+</I>&gt;<i> that is correct, but i prefer english. Perhaps international users will join
+</I>&gt;<i> this list.
+</I>&gt;<i>
+</I>&gt;<i> kind regards from Troisdorf &amp; Cologne
+</I>&gt;<i>
+</I>&gt;<i> ps: sorry i think i answered to private mail by accident.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Jonas Stein &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">news at jonasstein.de</A>&gt;
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Clip-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">Clip-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/clip-devel">https://lists.berlios.de/mailman/listinfo/clip-devel</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000005.html">[Clip-devel] can not compile current code tree
+</A></li>
+	<LI>Next message: <A HREF="000007.html">[Clip-devel] can not compile current code tree
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6">[ date ]</a>
+              <a href="thread.html#6">[ thread ]</a>
+              <a href="subject.html#6">[ subject ]</a>
+              <a href="author.html#6">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/clip-devel">More information about the Clip-devel
+mailing list</a><br>
+</body></html>
